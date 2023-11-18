@@ -1,0 +1,17 @@
+version: "3"
+services:
+  pyinfer:
+    image: footy-zkml:latest
+    container_name: footy-zkml
+    build:
+      context: ./srv
+    env_file:
+      - ./srv/.env
+    ports:
+      - 8080:8080
+    volumes:
+      - ./srv:/srv
+    working_dir: /srv
+    command: ["bash"]
+    stdin_open: true # docker run -i
+    tty: true # docker run -t

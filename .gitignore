@@ -1,0 +1,24 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+
+# notebooks
+.ipynb_checkpoints
+**/data/
+
+#Hardhat files
+cache
+artifacts
+package-lock.json
+
+#python
+__pycache__/
+
+#IDEs
+.vscode/
+.DS_Store
+
+commontasks.sh
+venv
