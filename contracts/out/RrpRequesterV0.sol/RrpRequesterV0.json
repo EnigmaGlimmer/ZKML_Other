@@ -1,0 +1,799 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_airnodeRrp",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "airnodeRrp",
+      "outputs": [
+        {
+          "internalType": "contract IAirnodeRrpV0",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x60a060405234801561001057600080fd5b5060405161018638038061018683398101604081905261002f91610099565b6001600160a01b0381166080819052604051632b77c09f60e21b81523060048201526001602482015263addf027c90604401600060405180830381600087803b15801561007b57600080fd5b505af115801561008f573d6000803e3d6000fd5b50505050506100c9565b6000602082840312156100ab57600080fd5b81516001600160a01b03811681146100c257600080fd5b9392505050565b60805160a56100e160003960006031015260a56000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c806371bab66614602d575b600080fd5b60537f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b03909116815260200160405180910390f3fea2646970667358221220a583aacc364c7aafbf9d36eb69343f472d2bbd368eff24fea4c9e8a0f0c8b20264736f6c63430008090033",
+    "sourceMap": "169:894:4:-:0;;;894:167;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;937:39:4;;;;;;986:68;;-1:-1:-1;;;986:68:4;;1042:4;986:68;;;477:51:9;1049:4:4;544:18:9;;;537:50;986:47:4;;450:18:9;;986:68:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;894:167;169:894;;14:290:9;84:6;137:2;125:9;116:7;112:23;108:32;105:52;;;153:1;150;143:12;105:52;179:16;;-1:-1:-1;;;;;224:31:9;;214:42;;204:70;;270:1;267;260:12;204:70;293:5;14:290;-1:-1:-1;;;14:290:9:o;309:284::-;169:894:4;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c806371bab66614602d575b600080fd5b60537f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b03909116815260200160405180910390f3fea2646970667358221220a583aacc364c7aafbf9d36eb69343f472d2bbd368eff24fea4c9e8a0f0c8b20264736f6c63430008090033",
+    "sourceMap": "169:894:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;199:41;;;;;;;;-1:-1:-1;;;;;199:32:9;;;181:51;;169:2;154:18;199:41:4;;;;;;",
+    "linkReferences": {},
+    "immutableReferences": {
+      "330": [
+        {
+          "start": 49,
+          "length": 32
+        }
+      ]
+    }
+  },
+  "methodIdentifiers": {
+    "airnodeRrp()": "71bab666"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_airnodeRrp\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"airnodeRrp\",\"outputs\":[{\"internalType\":\"contract IAirnodeRrpV0\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"Airnode RRP address is set at deployment and is immutable. RrpRequester is made its own sponsor by default. RrpRequester can also be sponsored by others and use these sponsorships while making requests, i.e., using this default sponsorship is optional.\",\"params\":{\"_airnodeRrp\":\"Airnode RRP contract address\"}}},\"title\":\"The contract to be inherited to make Airnode RRP requests\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/airnode/packages/airnode-protocol/contracts/rrp/requesters/RrpRequesterV0.sol\":\"RrpRequesterV0\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@api3/airnode-protocol/contracts/=lib/airnode/packages/airnode-protocol/contracts/\",\":@openzeppelin-0.8/contracts/=lib/openzeppelin-contracts-solc-0.8/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":airnode/=lib/airnode/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-solc-0.8/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-solc-0.8/=lib/openzeppelin-contracts-solc-0.8/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts-solc-0.8/contracts/\"]},\"sources\":{\"lib/airnode/packages/airnode-protocol/contracts/rrp/interfaces/IAirnodeRrpV0.sol\":{\"keccak256\":\"0x5306571db1377e8c9dd8cb6e6c7a8deaa2d8ec540e7b2b229e9db5aa5da21277\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3ff47c4fb89e55478d180e6a78049009ef57ba34688c1c454c12a7fd34c6df3a\",\"dweb:/ipfs/QmQyKgg7mXgcyfnDiaTr5s7JDqFWQY6xbL6M5ajDiJGuwo\"]},\"lib/airnode/packages/airnode-protocol/contracts/rrp/interfaces/IAuthorizationUtilsV0.sol\":{\"keccak256\":\"0x597a40e9911628f6bc1d845c9ebe7c345833e8814caa5ce02a8597d3b4ee7975\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://61c3e2fcf29d5cbc12b86ba82109675d1291def1e26e25982ad12859fe3d3a76\",\"dweb:/ipfs/QmPtfN5tmTgzGCXyxBQktuWAkxVWsg7Q7F8FB6YJveaDJq\"]},\"lib/airnode/packages/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol\":{\"keccak256\":\"0x4212b264303a78b3c3ed0230cf23b7c3ca58bccec936eccd1d4924347b0fea47\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://eaf9f61c252264854cbdc409692f99d00327ad7ca9cd4bc17f3b0164e4bc8d76\",\"dweb:/ipfs/QmYWvPeNGjND5kYPTMhU6RJRwgkHWqvYYoN24Lnbjndj8d\"]},\"lib/airnode/packages/airnode-protocol/contracts/rrp/interfaces/IWithdrawalUtilsV0.sol\":{\"keccak256\":\"0x732a3a2447150d8a8097042719ca1faf35e06cbfec364d1d6b17aae254cfd520\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4647ec4eb4c54e4d4a0af973e8804fdd5df0f6c5aa4d70bbeede40ea40bd672b\",\"dweb:/ipfs/QmSgVM8e6tAvwtWd5Tx9rewsBTpJwFo4J3A2vvQDZZvC9B\"]},\"lib/airnode/packages/airnode-protocol/contracts/rrp/requesters/RrpRequesterV0.sol\":{\"keccak256\":\"0x5a517e7b6e9a3bc7667a44866edbb6db81d8b0fde16325d1d49d1e64494568c8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8504ba05ab2a750ac2ae2bd2925a5fdd82219594b6881ba1d5016b7cde39a99d\",\"dweb:/ipfs/Qmdk3ACLaQeeW3HNUte2s4HSTNpB3fGDZCfjpmUrDtPGsV\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.9+commit.e5eed63a"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_airnodeRrp",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "airnodeRrp",
+          "outputs": [
+            {
+              "internalType": "contract IAirnodeRrpV0",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "constructor": {
+            "details": "Airnode RRP address is set at deployment and is immutable. RrpRequester is made its own sponsor by default. RrpRequester can also be sponsored by others and use these sponsorships while making requests, i.e., using this default sponsorship is optional.",
+            "params": {
+              "_airnodeRrp": "Airnode RRP contract address"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@api3/airnode-protocol/contracts/=lib/airnode/packages/airnode-protocol/contracts/",
+        "@openzeppelin-0.8/contracts/=lib/openzeppelin-contracts-solc-0.8/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "airnode/=lib/airnode/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-solc-0.8/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-solc-0.8/=lib/openzeppelin-contracts-solc-0.8/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/openzeppelin-contracts-solc-0.8/contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/airnode/packages/airnode-protocol/contracts/rrp/requesters/RrpRequesterV0.sol": "RrpRequesterV0"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/airnode/packages/airnode-protocol/contracts/rrp/interfaces/IAirnodeRrpV0.sol": {
+        "keccak256": "0x5306571db1377e8c9dd8cb6e6c7a8deaa2d8ec540e7b2b229e9db5aa5da21277",
+        "urls": [
+          "bzz-raw://3ff47c4fb89e55478d180e6a78049009ef57ba34688c1c454c12a7fd34c6df3a",
+          "dweb:/ipfs/QmQyKgg7mXgcyfnDiaTr5s7JDqFWQY6xbL6M5ajDiJGuwo"
+        ],
+        "license": "MIT"
+      },
+      "lib/airnode/packages/airnode-protocol/contracts/rrp/interfaces/IAuthorizationUtilsV0.sol": {
+        "keccak256": "0x597a40e9911628f6bc1d845c9ebe7c345833e8814caa5ce02a8597d3b4ee7975",
+        "urls": [
+          "bzz-raw://61c3e2fcf29d5cbc12b86ba82109675d1291def1e26e25982ad12859fe3d3a76",
+          "dweb:/ipfs/QmPtfN5tmTgzGCXyxBQktuWAkxVWsg7Q7F8FB6YJveaDJq"
+        ],
+        "license": "MIT"
+      },
+      "lib/airnode/packages/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol": {
+        "keccak256": "0x4212b264303a78b3c3ed0230cf23b7c3ca58bccec936eccd1d4924347b0fea47",
+        "urls": [
+          "bzz-raw://eaf9f61c252264854cbdc409692f99d00327ad7ca9cd4bc17f3b0164e4bc8d76",
+          "dweb:/ipfs/QmYWvPeNGjND5kYPTMhU6RJRwgkHWqvYYoN24Lnbjndj8d"
+        ],
+        "license": "MIT"
+      },
+      "lib/airnode/packages/airnode-protocol/contracts/rrp/interfaces/IWithdrawalUtilsV0.sol": {
+        "keccak256": "0x732a3a2447150d8a8097042719ca1faf35e06cbfec364d1d6b17aae254cfd520",
+        "urls": [
+          "bzz-raw://4647ec4eb4c54e4d4a0af973e8804fdd5df0f6c5aa4d70bbeede40ea40bd672b",
+          "dweb:/ipfs/QmSgVM8e6tAvwtWd5Tx9rewsBTpJwFo4J3A2vvQDZZvC9B"
+        ],
+        "license": "MIT"
+      },
+      "lib/airnode/packages/airnode-protocol/contracts/rrp/requesters/RrpRequesterV0.sol": {
+        "keccak256": "0x5a517e7b6e9a3bc7667a44866edbb6db81d8b0fde16325d1d49d1e64494568c8",
+        "urls": [
+          "bzz-raw://8504ba05ab2a750ac2ae2bd2925a5fdd82219594b6881ba1d5016b7cde39a99d",
+          "dweb:/ipfs/Qmdk3ACLaQeeW3HNUte2s4HSTNpB3fGDZCfjpmUrDtPGsV"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/airnode/packages/airnode-protocol/contracts/rrp/requesters/RrpRequesterV0.sol",
+    "id": 372,
+    "exportedSymbols": {
+      "IAirnodeRrpV0": [
+        181
+      ],
+      "IAuthorizationUtilsV0": [
+        225
+      ],
+      "ITemplateUtilsV0": [
+        275
+      ],
+      "IWithdrawalUtilsV0": [
+        323
+      ],
+      "RrpRequesterV0": [
+        371
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:1032:4",
+    "nodes": [
+      {
+        "id": 325,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:4",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 326,
+        "nodeType": "ImportDirective",
+        "src": "57:41:4",
+        "nodes": [],
+        "absolutePath": "lib/airnode/packages/airnode-protocol/contracts/rrp/interfaces/IAirnodeRrpV0.sol",
+        "file": "../interfaces/IAirnodeRrpV0.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 372,
+        "sourceUnit": 182,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 371,
+        "nodeType": "ContractDefinition",
+        "src": "169:894:4",
+        "nodes": [
+          {
+            "id": 330,
+            "nodeType": "VariableDeclaration",
+            "src": "199:41:4",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "71bab666",
+            "mutability": "immutable",
+            "name": "airnodeRrp",
+            "nameLocation": "230:10:4",
+            "scope": 371,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IAirnodeRrpV0_$181",
+              "typeString": "contract IAirnodeRrpV0"
+            },
+            "typeName": {
+              "id": 329,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 328,
+                "name": "IAirnodeRrpV0",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 181,
+                "src": "199:13:4"
+              },
+              "referencedDeclaration": 181,
+              "src": "199:13:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IAirnodeRrpV0_$181",
+                "typeString": "contract IAirnodeRrpV0"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 346,
+            "nodeType": "ModifierDefinition",
+            "src": "420:122:4",
+            "nodes": [],
+            "body": {
+              "id": 345,
+              "nodeType": "Block",
+              "src": "446:96:4",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 340,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 334,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -15,
+                            "src": "464:3:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 335,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "src": "464:10:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "arguments": [
+                            {
+                              "id": 338,
+                              "name": "airnodeRrp",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 330,
+                              "src": "486:10:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_IAirnodeRrpV0_$181",
+                                "typeString": "contract IAirnodeRrpV0"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_IAirnodeRrpV0_$181",
+                                "typeString": "contract IAirnodeRrpV0"
+                              }
+                            ],
+                            "id": 337,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "478:7:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": {
+                              "id": 336,
+                              "name": "address",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "478:7:4",
+                              "typeDescriptions": {}
+                            }
+                          },
+                          "id": 339,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "478:19:4",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "464:33:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "43616c6c6572206e6f74204169726e6f646520525250",
+                        "id": 341,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "499:24:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_1ec8d99ac81b26aaf48e4cd2f78e82eb54b74844d812499935ef9ce3cfbc547f",
+                          "typeString": "literal_string \"Caller not Airnode RRP\""
+                        },
+                        "value": "Caller not Airnode RRP"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_1ec8d99ac81b26aaf48e4cd2f78e82eb54b74844d812499935ef9ce3cfbc547f",
+                          "typeString": "literal_string \"Caller not Airnode RRP\""
+                        }
+                      ],
+                      "id": 333,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "456:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 342,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "456:68:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 343,
+                  "nodeType": "ExpressionStatement",
+                  "src": "456:68:4"
+                },
+                {
+                  "id": 344,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "534:1:4"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 331,
+              "nodeType": "StructuredDocumentation",
+              "src": "247:168:4",
+              "text": "@dev Reverts if the caller is not the Airnode RRP contract.\n Use it as a modifier for fulfill and error callback methods, but also\n check `requestId`."
+            },
+            "name": "onlyAirnodeRrp",
+            "nameLocation": "429:14:4",
+            "parameters": {
+              "id": 332,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "443:2:4"
+            },
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "id": 370,
+            "nodeType": "FunctionDefinition",
+            "src": "894:167:4",
+            "nodes": [],
+            "body": {
+              "id": 369,
+              "nodeType": "Block",
+              "src": "927:134:4",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 356,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 352,
+                      "name": "airnodeRrp",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 330,
+                      "src": "937:10:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IAirnodeRrpV0_$181",
+                        "typeString": "contract IAirnodeRrpV0"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 354,
+                          "name": "_airnodeRrp",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 349,
+                          "src": "964:11:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 353,
+                        "name": "IAirnodeRrpV0",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 181,
+                        "src": "950:13:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_IAirnodeRrpV0_$181_$",
+                          "typeString": "type(contract IAirnodeRrpV0)"
+                        }
+                      },
+                      "id": 355,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "950:26:4",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IAirnodeRrpV0_$181",
+                        "typeString": "contract IAirnodeRrpV0"
+                      }
+                    },
+                    "src": "937:39:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IAirnodeRrpV0_$181",
+                      "typeString": "contract IAirnodeRrpV0"
+                    }
+                  },
+                  "id": 357,
+                  "nodeType": "ExpressionStatement",
+                  "src": "937:39:4"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 364,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -28,
+                            "src": "1042:4:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_RrpRequesterV0_$371",
+                              "typeString": "contract RrpRequesterV0"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_RrpRequesterV0_$371",
+                              "typeString": "contract RrpRequesterV0"
+                            }
+                          ],
+                          "id": 363,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1034:7:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 362,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "1034:7:4",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 365,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1034:13:4",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "hexValue": "74727565",
+                        "id": 366,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1049:4:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "true"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 359,
+                            "name": "_airnodeRrp",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 349,
+                            "src": "1000:11:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 358,
+                          "name": "IAirnodeRrpV0",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 181,
+                          "src": "986:13:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IAirnodeRrpV0_$181_$",
+                            "typeString": "type(contract IAirnodeRrpV0)"
+                          }
+                        },
+                        "id": 360,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "986:26:4",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IAirnodeRrpV0_$181",
+                          "typeString": "contract IAirnodeRrpV0"
+                        }
+                      },
+                      "id": 361,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setSponsorshipStatus",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 89,
+                      "src": "986:47:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_bool_$returns$__$",
+                        "typeString": "function (address,bool) external"
+                      }
+                    },
+                    "id": 367,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "986:68:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 368,
+                  "nodeType": "ExpressionStatement",
+                  "src": "986:68:4"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 347,
+              "nodeType": "StructuredDocumentation",
+              "src": "548:341:4",
+              "text": "@dev Airnode RRP address is set at deployment and is immutable.\n RrpRequester is made its own sponsor by default. RrpRequester can also\n be sponsored by others and use these sponsorships while making\n requests, i.e., using this default sponsorship is optional.\n @param _airnodeRrp Airnode RRP contract address"
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 350,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 349,
+                  "mutability": "mutable",
+                  "name": "_airnodeRrp",
+                  "nameLocation": "914:11:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 370,
+                  "src": "906:19:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 348,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "906:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "905:21:4"
+            },
+            "returnParameters": {
+              "id": 351,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "927:0:4"
+            },
+            "scope": 371,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "RrpRequesterV0",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 327,
+          "nodeType": "StructuredDocumentation",
+          "src": "100:69:4",
+          "text": "@title The contract to be inherited to make Airnode RRP requests"
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          371
+        ],
+        "name": "RrpRequesterV0",
+        "nameLocation": "178:14:4",
+        "scope": 372,
+        "usedErrors": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 4
+}

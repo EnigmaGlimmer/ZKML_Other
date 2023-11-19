@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
 pragma solidity 0.8.9;
 import "@api3/airnode-protocol/contracts/rrp/requesters/RrpRequesterV0.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin-0.8/contracts/access/Ownable.sol";
 
 /// @title Example contract that uses Airnode RRP to access QRNG services
 contract QrngExample is RrpRequesterV0, Ownable {
