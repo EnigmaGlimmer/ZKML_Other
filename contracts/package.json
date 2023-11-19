@@ -8,6 +8,7 @@
     "test": "test"
   },
   "scripts": {
+    "deploy:chiliz-verifier":"forge create --rpc-url https://rpc.ankr.com/chiliz --legacy --private-key $(grep PRIVATE_KEY .env | cut -d '=' -f2) src/Verifier.sol:Halo2Verifier",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
