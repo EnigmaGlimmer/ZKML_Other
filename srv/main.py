@@ -9,9 +9,17 @@ import uuid
 
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
+
 import uvicorn
 from pydantic import BaseModel
+
+import numpy as np
+import onnx
+import onnxruntime as ort
 
 class ModelInput(BaseModel):
     inputdata: str
@@ -43,7 +51,23 @@ app.add_middleware(
     allow_headers=["*"],)
 
 # Class UploadOnnxModel(BaseModel):
-    
+
+onnx_model = onnx.load("onnxmodel/soccermodel.onnx")
+sess = ort.InferenceSession("onnxmodel/soccermodel.onnx")
+#sess = ort.InferenceSession("./models/ttt.onnx")
+input_name = sess.get_inputs()[0].name
+print("Input name  :", input_name)
+input_shape = sess.get_inputs()[0].shape
+print("Input shape :", input_shape)
+input_type = sess.get_inputs()[0].type
+print("Input type  :", input_type)
+
+output_name = sess.get_outputs()[0].name
+print("Output name  :", output_name)  
+output_shape = sess.get_outputs()[0].shape
+print("Output shape :", output_shape)
+output_type = sess.get_outputs()[0].type
+print("Output type  :", output_type)
 
 """
 Upload onnx model for proving, no validation atm
@@ -112,15 +136,15 @@ Generates evm verifier
 """
 @app.get('/run/gen_evm_verifier')
 async def gen_evm_verifier():
-    global loaded_inputdata
-    global loaded_onnxmodel
-    global loaded_proofname
-    global running
+    # global loaded_inputdata
+    # global loaded_onnxmodel
+    # global loaded_proofname
+    # global running
 
-    # loaded_inputdata="inputdata/5b9e4019-2b31-4578-850c-8384716cb18a.json"
-    # loaded_onnxmodel="onnxmodel/64a18ff9-855d-447f-9926-8ff2d660d3f9.onnx"
-    # loaded_proofname="inputdata_5b9e4019-2b31-4578-850c-8384716cb18a+onnxmodel_64a18ff9-855d-447f-9926-8ff2d660d3f9"
-    # running=False
+    loaded_inputdata="inputdata/soccertorchinput.json"
+    loaded_onnxmodel="onnxmodel/soccertorch.onnx"
+    loaded_proofname="inputdata_soccertorchinput+onnxmodel_soccertorch"
+    running=False
 
     print(loaded_inputdata)
     print(loaded_onnxmodel)
@@ -130,7 +154,7 @@ async def gen_evm_verifier():
     print(settings_path)
     srs_path = os.path.join('kzg.srs')
     print(srs_path)
-    compiled_model_path = os.path.join('network.compiled')
+    compiled_model_path = os.path.join('soccercircuit.compiled')
     pk_path = os.path.join('test.pk')
     vk_path = os.path.join('test.vk')
     witness_path = os.path.join('witness.json')
@@ -251,6 +275,65 @@ async def gen_evm_verifier():
     #     err = traceback.format_exc()
     #     return "Something bad happened! Please inform the server admin\n" + err, 500
     return { "message": "win"}
+
+
+@app.post('/predict')
+async def predict():
+    # jsonpayload = await request.json()
+    
+    # results_dict = {}
+    # for i, b in enumerate(jsonpayload):
+    #     x = np.array([b]).astype("float32")
+    #     onnx_pred = sess.run([output_name], {input_name: x})
+        #score = onnx_pred[0][0][0]
+        #results_dict[i] = score
+    x= np.array([[
+        63.0, 76.0, 56.0, 70.0, 27.0, 84.0, 
+        77.0, 78.0, 75.0, 75.0, 45.0, 56.0, 
+        61.0, 61.0, 68.0, 72.0, 72.0, 71.0, 
+        76.0, 47.0, 65.0, 68.0, 74.0, 74.0, 
+        67.0, 31.0, 55.0, 57.0, 75.0, 75.0, 
+        76.0, 86.0, 93.0, 88.0, 64.0, 78.0, 
+        61.0, 70.0, 77.0, 78.0, 82.0, 82.0, 
+        65.0, 80.0, 85.0, 86.0, 73.0, 72.0, 
+        61.0, 38.0, 65.0, 68.0, 88.0, 88.0, 
+        85.0, 71.0, 83.0, 84.0, 80.0, 72.0
+        ]]).astype("float32")
+    
+    alt = np.array([[
+        90.0,90.0,90.0,90.0,90.0,90.0,
+        90.0,90.0,90.0,90.0,90.0,90.0,
+        90.0,90.0,90.0,90.0,90.0,90.0,
+        90.0,90.0,90.0,90.0,90.0,90.0,
+        90.0,90.0,90.0,90.0,90.0,90.0,
+
+        80.0,80.0,80.0,80.0,80.0,80.0, 
+        80.0,80.0,80.0,80.0,80.0,80.0, 
+        80.0,80.0,80.0,80.0,80.0,80.0, 
+        80.0,80.0,80.0,80.0,80.0,80.0, 
+        80.0,80.0,80.0,80.0,80.0,80.0
+        ]]).astype("float32")
+    
+    onnx_pred = sess.run([output_name], {input_name: x})
+    print(onnx_pred)
+
+    result = np.argmax(onnx_pred, axis=-1)
+    print(result)
+
+    if(result == 0):
+        result = "1-0"
+    elif(result == 2):
+        result = "0-1"
+    else:
+        result = "1-0"
+
+    #sorted_results = sorted(results_dict.items(), key=lambda x:x[1], reverse=True)
+    #print(sorted_results)
+    #bestconfigkey = sorted_results[0][0]
+    #print(jsonpayload[bestconfigkey])
+
+    #return JSONResponse(content=jsonable_encoder(jsonpayload[bestconfigkey]))
+    return { "message": result}
 
 
 @app.get("/")
