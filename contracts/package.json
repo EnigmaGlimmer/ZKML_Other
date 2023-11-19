@@ -9,6 +9,7 @@
   },
   "scripts": {
     "deploy:chiliz-verifier":"forge create --rpc-url https://rpc.ankr.com/chiliz --legacy --private-key $(grep PRIVATE_KEY .env | cut -d '=' -f2) src/Verifier.sol:Halo2Verifier",
+    "deploy:chiliz-api3":"forge create --rpc-url https://rpc.ankr.com/chiliz --private-key $(grep PRIVATE_KEY .env | cut -d '=' -f2) src/Qrng.sol:QrngExample --constructor-args 0x2ab9f26E18B64848cd349582ca3B55c2d06f507d",
     "deploy:sepolia-api3":"forge create --rpc-url https://sepolia.infura.io/v3/27a403993ee144f1b9f555e8075eebc3 --private-key $(grep PRIVATE_KEY .env | cut -d '=' -f2) src/Qrng.sol:QrngExample --constructor-args 0x2ab9f26E18B64848cd349582ca3B55c2d06f507d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
