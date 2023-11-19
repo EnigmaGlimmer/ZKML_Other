@@ -327,6 +327,46 @@ async def predict():
     else:
         result = "1-0"
 
+    # generate proof
+    loaded_inputdata="inputdata/soccertorchinput.json"
+    loaded_onnxmodel="onnxmodel/soccertorch.onnx"
+    loaded_proofname="inputdata_soccertorchinput+onnxmodel_soccertorch"
+    running=False
+
+    print(loaded_inputdata)
+    print(loaded_onnxmodel)
+    print(loaded_proofname)
+    print(running)
+    settings_path = os.path.join('settings.json')
+    print(settings_path)
+    srs_path = os.path.join('kzg.srs')
+    print(srs_path)
+    compiled_model_path = os.path.join('soccercircuit.compiled')
+    pk_path = os.path.join('test.pk')
+    vk_path = os.path.join('test.vk')
+    witness_path = os.path.join('witness.json')
+
+    res = ezkl.gen_witness(loaded_inputdata, compiled_model_path, witness_path)
+    assert os.path.isfile(witness_path)
+
+    # Generate the proof
+    print("generating proof...")
+    proof_path = os.path.join('proof.json')
+
+    proof = ezkl.prove(
+            witness_path,
+            compiled_model_path,
+            pk_path,
+            proof_path,
+            srs_path,
+            "single",
+        )
+    
+    assert os.path.isfile(proof_path)
+
+    # verify our proof via smart contracts
+
+
     #sorted_results = sorted(results_dict.items(), key=lambda x:x[1], reverse=True)
     #print(sorted_results)
     #bestconfigkey = sorted_results[0][0]
@@ -335,6 +375,9 @@ async def predict():
     #return JSONResponse(content=jsonable_encoder(jsonpayload[bestconfigkey]))
     return { "message": result}
 
+@app.get("/verify")
+async def verify():
+    return True
 
 @app.get("/")
 async def root():
