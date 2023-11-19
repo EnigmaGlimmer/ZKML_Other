@@ -23,5 +23,7 @@ RUN pip install -r requirements.txt
 RUN pip install numpy
 RUN pip install ezkl
 
+RUN pip install onnx onnxruntime
+
 CMD python main.py
 #CMD [ "bash" ]
