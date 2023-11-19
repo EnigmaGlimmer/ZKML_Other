@@ -22,3 +22,6 @@ __pycache__/
 
 commontasks.sh
 venv
+
+#foundry
+contracts/lib/
